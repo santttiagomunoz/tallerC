@@ -45,10 +45,11 @@ typedef struct Matricula
 } Matricula;
 #pragma pack(pop)
 
-int main()
+int main(int argc, char *argv[])
 {
 
-    FILE *fp = fopen("sample_data.bin", "rb");
+    char *fileName = argv[1];
+    FILE *fp = fopen(fileName, "rb");
 
     Header header;
     Student *student;

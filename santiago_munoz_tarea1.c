@@ -64,11 +64,11 @@ int main(int argc, char *argv[])
     if (fp == NULL)
         return 1;
 
-    size_t headerLeido = fread(&header, sizeof(Header), 1, fp);
-    if (headerLeido != 0)
-    {
-        printf("%x, %d, %d, %d\n", header.magicString, header.cantStudents, header.cantCourses, header.cantMatriculas);
-    }
+    // size_t headerLeido = fread(&header, sizeof(Header), 1, fp);
+    // if (headerLeido != 0)
+    // {
+    //     printf("%x, %d, %d, %d\n", header.magicString, header.cantStudents, header.cantCourses, header.cantMatriculas);
+    // }
 
     student = malloc(sizeof(Student) * 1000);
     fread(student, sizeof(Student), 1000, fp);
