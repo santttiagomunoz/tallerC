@@ -47,12 +47,13 @@ typedef struct Matricula
 } Matricula;
 #pragma pack(pop)
 
+
 int main(int argc, char *argv[])
 {
 
-    char *file_name = argv[1];
-    int minAge = atoi(argv[2]);
-    int maxAge = atoi(argv[3]);
+     char *file_name = argv[1];
+     int minAge = atoi(argv[2]);
+     int maxAge = atoi(argv[3]);
 
     FILE *fp = fopen(file_name, "rb");
     Student *student;
@@ -75,7 +76,6 @@ int main(int argc, char *argv[])
     printf("\n%-23.23s %-6s %-6s\n", "Name", "Age", "Gender");
     for (int i = 0; i < 1000; i++)
     {
-
         if (student[i].age >= minAge && student[i].age <= maxAge)
         {
             unsigned char b = student[i].flag;
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    fclose(fp);
-
+    fclose(fp);    
+    free(student);
     return 0;
 }
